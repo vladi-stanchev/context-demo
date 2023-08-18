@@ -1,7 +1,9 @@
+import { useContext } from 'react';
+import UserContext from '../UserContext';
+
 function Secret() {
-    return (
-        <h1>Secret page</h1>
-    )
+    const { loggedIn } = useContext(UserContext);
+    return <div>{loggedIn ? <h1>Secret page</h1> : 'Bugger off!'}</div>;
 }
 
-export default Secret
+export default Secret;

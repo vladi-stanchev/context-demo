@@ -8,11 +8,20 @@ import { useState } from 'react';
 import UserContext from './UserContext';
 
 function App() {
-    const [loggedIn, setLoggedIn] = useState(true);
+    const [loggedIn, setLoggedIn] = useState(false);
+
+    function toggleLoggedIn() {
+        setLoggedIn(!loggedIn);
+    }
     return (
         <div className='App'>
             <BrowserRouter>
-                <UserContext.Provider value={{ loggedIn: loggedIn }}>
+                <UserContext.Provider
+                    value={{
+                        loggedIn: loggedIn,
+                        toggleLoggedIn: toggleLoggedIn,
+                    }}
+                >
                     <Nav />
 
                     <Routes>
