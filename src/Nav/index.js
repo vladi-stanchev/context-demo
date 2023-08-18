@@ -1,13 +1,16 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
+import UserContext from '../UserContext';
 
 function Nav() {
+    const { loggedIn } = useContext(UserContext);
     return (
         <nav>
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/secret">Secret page</NavLink>
-            <button>Login</button>
+            <NavLink to='/'>Home</NavLink>
+            {loggedIn && <NavLink to='/secret'>Secret page</NavLink>}
+            <button>{loggedIn ? 'Logout' : 'Log in'}</button>
         </nav>
-    )
+    );
 }
 
-export default Nav
+export default Nav;
