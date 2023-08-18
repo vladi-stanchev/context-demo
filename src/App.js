@@ -18,8 +18,8 @@ function App() {
             <BrowserRouter>
                 <UserContext.Provider
                     value={{
-                        loggedIn: loggedIn,
-                        toggleLoggedIn: toggleLoggedIn,
+                        loggedIn, //loggedIn: loggedIn
+                        toggleLoggedIn, // toggleLoggedIn: toggleLoggedIn
                     }}
                 >
                     <Nav />

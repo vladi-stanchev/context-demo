@@ -1,10 +1,12 @@
+import LoginButton from '../LoginButton';
+
 function Footer() {
     return (
         <footer>
             Copyright
-            <button>Login</button>
+            <LoginButton />
         </footer>
-    )
+    );
 }
 
-export default Footer
+export default Footer;
